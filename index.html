@@ -1,0 +1,1007 @@
+<title>Elite Hapkido</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Elite Hapkido, CT Forja, Santa Terezinha, Belo Horizonte. Hapkido e defesa pessoal com o professor Yuri Vargas, faixa preta 1º Dan e campeão brasileiro de hapkido. Filiada à FMHI.">
+<meta name="theme-color" content="#0a0b10">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@600;700;800;900&family=Figtree:wght@400;500;600;700&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@700;900&display=swap">
+<style>
+/* Layout: o emblema da águia é o centro e voa junto com quem lê. Fundo preto-azulado da plumagem, dourado do fundo da logo como luz, creme das penas no texto. Hangul 합기도 como elemento gráfico. */
+:root{
+  --ink:#0a0b10;        /* preto do anel */
+  --night:#11141f;
+  --navy:#1f2538;       /* plumagem azul-marinho */
+  --navy-2:#2a314a;
+  --gold:#dcc37a;       /* dourado do fundo da logo */
+  --gold-hi:#efdb9a;
+  --gold-deep:#a8893f;
+  --feather:#f3f1e8;    /* penas brancas */
+  --lid:#cfcac0;        /* pálpebra (pena cinza) */
+  --muted:#a4a7b6;
+  --line:rgba(220,195,122,.16);
+  --line-2:rgba(243,241,232,.08);
+  --f-display:"Saira Condensed","Arial Narrow",Impact,sans-serif;
+  --f-body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  --f-brush:"Nanum Brush Script","Noto Sans KR",cursive;
+  --f-kr:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--feather);font:400 17px/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;line-height:.9;margin:0;text-wrap:balance;letter-spacing:.005em}
+p{margin:0}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:clamp(64px,10vw,124px)}
+:focus-visible{outline:2px solid var(--gold-hi);outline-offset:3px}
+.eyebrow{font:700 13px/1 var(--f-display);letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.eyebrow .kr{font:700 13px/1 var(--f-kr);letter-spacing:.1em;color:var(--gold-deep)}
+.gold{background:linear-gradient(180deg,var(--gold-hi) 10%,var(--gold) 55%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Botões */
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:999px;font:700 15px/1 var(--f-body);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:transform .2s ease,background .2s ease,border-color .2s ease,box-shadow .2s ease;cursor:pointer}
+.btn svg{width:20px;height:20px;flex:none}
+.btn-main{background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:var(--ink);box-shadow:0 10px 30px -12px rgba(220,195,122,.55)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 16px 36px -12px rgba(220,195,122,.7)}
+.btn-ghost{border-color:rgba(243,241,232,.22);color:var(--feather);background:transparent}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-hi)}
+
+/* Topo */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,11,16,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-2)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:70px;transition:height .3s ease}
+.nav.small .wrap{height:58px}
+.nav-progress{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold-hi));transform-origin:0 50%;transform:scaleX(0)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:42px;height:42px;flex:none}
+.brand b{font:800 22px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase}
+.brand b span{color:var(--gold)}
+.nav-links{display:flex;gap:28px;font:600 14px/1 var(--f-body);letter-spacing:.03em}
+.nav-links a{text-decoration:none;color:var(--muted);transition:color .2s ease}
+.nav-links a:hover{color:var(--gold-hi)}
+.nav .btn{min-height:42px;padding:0 18px;font-size:13px}
+@media (max-width:960px){.nav-links{display:none}}
+@media (max-width:420px){.nav .btn span{display:none}.nav .btn{padding:0 13px}.brand b{font-size:19px}}
+
+/* Olhos do emblema (pálpebras e brilho) */
+.emb{position:relative;display:block;border-radius:50%}
+.emb > img{display:block;width:100%;height:100%;border-radius:50%}
+.emb .lid{position:absolute;width:8.4%;height:5.4%;background:var(--lid);border-radius:50%;transform:scaleY(0);transform-origin:50% 0;transition:transform .08s ease;box-shadow:inset 0 -2px 2px rgba(0,0,0,.25)}
+.emb .lid.l{left:41.3%;top:35%;rotate:12deg}
+.emb .lid.r{left:64.1%;top:35.8%;rotate:-10deg}
+.emb.blink .lid{transform:scaleY(1)}
+.emb .glow{position:absolute;width:9%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(255,236,170,.95),rgba(220,195,122,.5) 40%,transparent 70%);mix-blend-mode:screen;opacity:0;transition:opacity .3s ease;pointer-events:none}
+.emb .glow.l{left:41%;top:33.4%}.emb .glow.r{left:63.8%;top:34.2%}
+.emb.fire .glow{opacity:1}
+
+/* Hero */
+.hero{position:relative;padding-block:clamp(32px,6vw,72px) clamp(48px,7vw,90px);overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(55% 75% at 76% 42%,rgba(220,195,122,.22),transparent 62%),
+  radial-gradient(40% 60% at 70% 100%,rgba(42,49,74,.9),transparent 70%),
+  linear-gradient(180deg,var(--ink),var(--night))}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,4vw,56px);align-items:center}
+.hero-copy{min-width:0;position:relative}
+.hero h1{font-size:clamp(58px,10.5vw,148px);font-weight:900;margin-top:22px;line-height:.86}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.04em}
+.hero h1 .ln > span{display:inline-block}
+.hero .lede{max-width:33em;margin-top:26px;font-size:clamp(17px,1.6vw,20px);color:#d6d6de}
+.hero .lede b{color:var(--feather);font-weight:600}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:999px;font:600 13px/1 var(--f-body);color:var(--muted)}
+.chip i{width:7px;height:7px;border-radius:50%;background:var(--gold)}
+
+.stage{position:relative;min-width:0;display:grid;place-items:center;aspect-ratio:1;max-width:560px;width:100%;justify-self:center;perspective:1000px}
+.hangul{position:absolute;z-index:-1;left:-6%;top:50%;translate:0 -50%;writing-mode:vertical-rl;font:400 clamp(120px,17vw,230px)/1 var(--f-brush);color:var(--gold);opacity:.13;pointer-events:none;letter-spacing:-.05em}
+.orbit{position:absolute;inset:0;width:100%;height:100%}
+.orbit text{font:700 15px var(--f-display);letter-spacing:.42em;fill:var(--gold);text-transform:uppercase}
+.orbit .ring-line{fill:none;stroke:var(--line);stroke-width:1}
+.orbit .ticks{fill:none;stroke:var(--gold);stroke-width:1;opacity:.35}
+@media (prefers-reduced-motion:no-preference){.orbit .spin{animation:spin 60s linear infinite;transform-origin:50% 50%}@keyframes spin{to{transform:rotate(360deg)}}}
+.eagle{position:relative;width:74%;aspect-ratio:1;border:0;padding:0;background:none;border-radius:50%;cursor:pointer;transform-style:preserve-3d;transition:transform .3s cubic-bezier(.2,.8,.2,1),opacity .4s ease;-webkit-tap-highlight-color:transparent}
+.eagle .emb{width:100%;height:100%;filter:drop-shadow(0 30px 40px rgba(0,0,0,.6))}
+.eagle::before{content:"";position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle,rgba(239,219,154,.35),transparent 65%);z-index:-1;opacity:.7;transition:opacity .3s ease}
+.eagle:hover::before{opacity:1}
+.eagle.strike{animation:strike .45s cubic-bezier(.3,.7,.3,1)}
+@keyframes strike{0%{scale:1}30%{scale:.94}60%{scale:1.04}100%{scale:1}}
+.shock{position:absolute;inset:13%;border-radius:50%;border:2px solid var(--gold-hi);opacity:0;pointer-events:none}
+.shock.go{animation:shock .7s ease-out}
+@keyframes shock{0%{opacity:.9;scale:1}100%{opacity:0;scale:1.35}}
+@media (prefers-reduced-motion:no-preference){.eagle .emb{animation:float 6s ease-in-out infinite}@keyframes float{50%{translate:0 -8px}}}
+.card{position:absolute;right:-2%;top:4%;width:min(250px,56%);background:var(--feather);color:var(--ink);border-radius:16px 16px 16px 4px;padding:14px 16px 16px;box-shadow:0 20px 40px -10px rgba(0,0,0,.6);transition:opacity .25s ease,scale .25s ease,translate .25s ease;transform-origin:0 100%}
+.card.hide{opacity:0;scale:.9;translate:0 8px;pointer-events:none}
+.card .tag{display:flex;justify-content:space-between;gap:8px;font:700 11px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep)}
+.card .kr{display:block;margin-top:8px;font:900 22px/1.1 var(--f-kr);color:var(--navy)}
+.card b{display:block;margin-top:4px;font:800 26px/1 var(--f-display);text-transform:uppercase}
+.card span.txt{display:block;margin-top:6px;font-size:14px;line-height:1.4;color:#3b3f4f}
+.hint{position:absolute;bottom:-14px;left:50%;translate:-50% 0;white-space:nowrap;font:700 11px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--muted);background:rgba(10,11,16,.8);border:1px solid var(--line);padding:8px 12px;border-radius:999px;pointer-events:none}
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .stage{max-width:420px;order:-1;margin-top:4px}
+  .card{right:0;top:0;width:min(220px,58%)}
+  .card b{font-size:22px}
+}
+
+/* Faixa de termos */
+.marquee{border-block:1px solid var(--line);background:var(--night);overflow:hidden;padding-block:16px}
+.marquee-track{display:flex;gap:44px;width:max-content;font:800 clamp(22px,3vw,34px)/1 var(--f-display);text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.marquee-track span{display:flex;align-items:center;gap:44px;color:var(--feather)}
+.marquee-track span::after{content:"";width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+.marquee-track em{font:900 .8em var(--f-kr);font-style:normal;color:var(--gold);margin-right:-26px}
+@media (prefers-reduced-motion:no-preference){.marquee-track{animation:slide 38s linear infinite}@keyframes slide{to{transform:translateX(-50%)}}}
+
+/* Cabeçalho de seção */
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 48px;margin-bottom:clamp(36px,5vw,60px)}
+.sec-head > *{min-width:0}
+.sec-head h2{font-size:clamp(46px,6.6vw,90px);margin-top:18px}
+.sec-head p{max-width:31em;color:var(--muted)}
+
+/* 합 기 도 */
+.way-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,22px)}
+.way{position:relative;min-width:0;padding:30px 26px;border-radius:20px;background:linear-gradient(180deg,var(--navy),var(--night));border:1px solid var(--line-2);overflow:hidden;transition:transform .3s ease,border-color .3s ease}
+.way:hover{transform:translateY(-4px);border-color:var(--line)}
+.way .glyph{display:block;font:900 clamp(96px,11vw,140px)/1 var(--f-kr);color:transparent;-webkit-text-stroke:1.5px var(--gold);transition:color .3s ease}
+.way:hover .glyph{color:rgba(220,195,122,.14)}
+.way .rom{position:absolute;top:26px;right:24px;font:800 14px/1 var(--f-display);letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.way h3{margin-top:22px;font-size:38px}
+.way p{margin-top:10px;color:var(--muted);font-size:16px}
+@media (max-width:860px){.way-grid{grid-template-columns:1fr}.way{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 20px;align-items:center;padding:24px 20px}.way .glyph{grid-row:1 / span 3;font-size:84px}.way .rom{position:static;grid-column:2}.way h3{margin-top:0;font-size:32px;grid-column:2}.way p{margin-top:0;grid-column:2}}
+
+/* Professor */
+.coach{background:var(--night);position:relative;overflow:hidden;isolation:isolate}
+.coach::before{content:"";position:absolute;z-index:-1;right:-10%;top:-20%;width:60%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(220,195,122,.08),transparent 65%)}
+.coach-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,84px);align-items:start}
+.coach-grid > *{min-width:0}
+.portrait{position:relative;margin:0;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:var(--navy)}
+.portrait img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:50% 30%}
+.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,11,16,.85));pointer-events:none}
+.portrait figcaption{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;display:flex;flex-wrap:wrap;gap:8px}
+.portrait figcaption span{background:rgba(10,11,16,.85);border:1px solid var(--line);padding:8px 12px;border-radius:999px;font:700 11px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.coach h2{font-size:clamp(58px,8vw,112px);margin-top:18px}
+.coach .role{margin-top:14px;font:600 15px/1.5 var(--f-body);color:var(--muted)}
+.pillars{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.pillars span{font:800 15px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:9px 14px;border-radius:4px}
+.coach .bio{margin-top:22px;max-width:36em;color:#d6d6de;font-size:clamp(17px,1.5vw,19px);display:grid;gap:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:30px;background:var(--line-2);border:1px solid var(--line-2);border-radius:16px;overflow:hidden}
+.stat{background:var(--night);padding:18px 16px;display:grid;gap:6px;min-width:0}
+.stat b{font:900 clamp(40px,4.4vw,56px)/.9 var(--f-display);color:var(--gold);font-variant-numeric:tabular-nums}
+.stat span{font:600 13px/1.3 var(--f-body);color:var(--muted)}
+.belts{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:18px}
+.belt-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 18px;align-items:baseline}
+.belt-row .art{font:800 22px/1 var(--f-display);text-transform:uppercase;letter-spacing:.02em}
+.belt-row .lvl{font:700 12px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.belt-row small{grid-column:1 / -1;color:var(--muted);font-size:14.5px;line-height:1.45}
+.belt-bar{grid-column:1 / -1;position:relative;height:14px;border-radius:3px;background:var(--c);box-shadow:inset 0 -3px 0 rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.12);transform-origin:0 50%}
+.belt-bar::before{content:"";position:absolute;inset:0;border-radius:inherit;background:repeating-linear-gradient(0deg,rgba(255,255,255,.05) 0 1px,transparent 1px 4px)}
+.belt-bar::after{content:"";position:absolute;right:14%;top:-4px;bottom:-4px;width:var(--tipw,0);background:var(--tip,transparent);border-radius:2px}
+.b-black{--c:#121318;--tip:var(--gold);--tipw:22px;outline:1px solid rgba(243,241,232,.12)}
+.b-brown{--c:#6b4426}
+.b-blue{--c:#2f5ea8}
+.coach .ig{display:inline-flex;align-items:center;gap:8px;margin-top:30px;text-decoration:none;color:var(--gold);font-weight:600;border-bottom:1px solid var(--gold-deep);padding-bottom:3px}
+.coach .ig svg{width:18px;height:18px}
+@media (max-width:860px){.coach-grid{grid-template-columns:1fr}.portrait{max-width:420px}}
+@media (max-width:420px){.stat{padding:14px 10px}.stat span{font-size:12px}}
+
+/* Títulos */
+.titles-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:start}
+.titles-grid > *{min-width:0}
+.palm{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.palm li{display:grid;grid-template-columns:136px 34px 1fr;gap:14px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line-2)}
+.palm .yr{white-space:nowrap;font:900 24px/1 var(--f-display);color:var(--gold);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.palm .md{font:900 18px/1 var(--f-display);text-align:center;width:30px;height:30px;line-height:30px;border-radius:50%;background:linear-gradient(180deg,var(--gold-hi),var(--gold-deep));color:var(--ink);align-self:center}
+.palm .md.silver{background:linear-gradient(180deg,#eceef3,#9ca1ae)}
+.palm b{display:block;font:800 20px/1.15 var(--f-display);text-transform:uppercase;letter-spacing:.01em}
+.palm small{display:block;margin-top:4px;color:var(--muted);font-size:14.5px}
+.palm .art{font:700 11px/1 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--gold-deep);margin-left:6px}
+.podium{position:relative;margin:0;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.podium img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.podium figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 18px;background:linear-gradient(180deg,transparent,rgba(10,11,16,.92));font:700 13px/1.4 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi)}
+@media (max-width:860px){.titles-grid{grid-template-columns:1fr}.podium{max-width:440px}.palm li{grid-template-columns:30px 1fr;gap:4px 12px}.palm .yr{grid-column:2;font-size:18px}.palm .md{grid-row:1 / span 2;align-self:start}.palm li > div{grid-column:2}}
+
+/* Em ação (vídeos) */
+.action{background:var(--night)}
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.reel{position:relative;min-width:0;margin:0;border-radius:18px;overflow:hidden;background:var(--navy);border:1px solid var(--line-2);aspect-ratio:9/16;max-width:100%}
+.reel video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(10,11,16,.85));pointer-events:none}
+.reel figcaption{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;display:grid;gap:4px}
+.reel figcaption .kr{font:900 15px/1 var(--f-kr);color:var(--gold)}
+.reel figcaption b{font:800 22px/1 var(--f-display);text-transform:uppercase}
+.reel.wide{grid-column:1 / -1;aspect-ratio:16/7}
+.reel .play{position:absolute;z-index:3;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(10,11,16,.7);color:var(--feather);display:grid;place-items:center;cursor:pointer}
+.reel .play svg{width:14px;height:14px}
+@media (max-width:860px){.reels{grid-template-columns:repeat(2,1fr)}.reel.wide{aspect-ratio:16/10}}
+
+/* Técnicas */
+.tech-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-2);border:1px solid var(--line-2);border-radius:22px;overflow:hidden}
+.tech{background:var(--ink);padding:30px 24px 32px;display:grid;gap:12px;align-content:start;min-width:0;transition:background .3s ease}
+.tech:hover{background:var(--night)}
+.tech .kr{font:900 30px/1 var(--f-kr);color:var(--gold);transition:letter-spacing .3s ease}
+.tech:hover .kr{letter-spacing:.06em}
+.tech .rom{font:700 12px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.tech h3{font-size:32px;margin-top:10px}
+.tech p{color:var(--muted);font-size:15.5px}
+.tech svg.ic{width:44px;height:44px;color:var(--gold);margin-bottom:6px}
+@media (max-width:1020px){.tech-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.tech-grid{grid-template-columns:1fr}}
+
+/* Para quem é */
+.who{padding-top:0}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.who-card{min-width:0;border-radius:20px;border:1px solid var(--line-2);padding:28px 26px;display:grid;gap:12px;align-content:start;background:var(--night);transition:border-color .3s ease,transform .3s ease}
+.who-card:hover{border-color:var(--gold-deep);transform:translateY(-3px)}
+.who-card .n{font:900 15px/1 var(--f-display);letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.who-card h3{font-size:36px}
+.who-card p{color:var(--muted)}
+.who-card.main{background:linear-gradient(160deg,var(--navy-2),var(--night) 70%);border-color:var(--line)}
+@media (max-width:860px){.who-grid{grid-template-columns:1fr}}
+
+/* Federação */
+.fed{background:linear-gradient(180deg,var(--gold-hi),var(--gold) 60%,var(--gold-deep));color:var(--ink);position:relative;overflow:hidden;isolation:isolate}
+.fed::after{content:"합기도";position:absolute;z-index:-1;left:-2%;bottom:-18%;font:400 clamp(160px,26vw,360px)/1 var(--f-brush);color:rgba(10,11,16,.07);pointer-events:none}
+.fed .eyebrow{color:#5a4a1e}
+.fed .eyebrow .kr{color:#6d5a25}
+.fed-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,64px);align-items:center}
+.fed-grid > *{min-width:0}
+.fed h2{font-size:clamp(44px,6.4vw,88px);margin-top:18px}
+.fed p.lead{margin-top:20px;max-width:32em;color:#2c2614;font-size:18px}
+.fed ul{list-style:none;margin:28px 0 0;padding:0;display:grid;border-top:2px solid var(--ink)}
+.fed li{display:grid;grid-template-columns:44px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid rgba(10,11,16,.25);font-weight:600}
+.fed li b{font:900 22px/1.2 var(--f-display)}
+.fed .btn-dark{background:var(--ink);color:var(--gold-hi);margin-top:26px}
+.fed .btn-dark:hover{transform:translateY(-2px)}
+.fed-photo{margin:0;border-radius:22px;overflow:hidden;border:3px solid var(--ink);box-shadow:0 30px 60px -20px rgba(10,11,16,.5);justify-self:end;width:100%;max-width:440px}
+.fed-photo img{display:block;width:100%;height:auto;aspect-ratio:5/6;object-fit:cover;object-position:50% 20%}
+.fed-photo figcaption{background:var(--ink);color:var(--gold-hi);padding:12px 16px;font:700 12px/1.3 var(--f-display);letter-spacing:.16em;text-transform:uppercase}
+@media (max-width:860px){.fed-grid{grid-template-columns:1fr}.fed-photo{justify-self:start}}
+
+/* Galeria */
+.gallery{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:clamp(120px,15vw,200px);gap:10px}
+.g{position:relative;margin:0;overflow:hidden;border-radius:14px;background:var(--navy);cursor:zoom-in;border:0;padding:0}
+.g img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .6s cubic-bezier(.2,.8,.2,1)}
+.g:hover img{scale:1.05}
+.g span{position:absolute;left:10px;bottom:10px;right:10px;text-align:left;font:700 11px/1.3 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--gold-hi);background:rgba(10,11,16,.8);padding:7px 10px;border-radius:8px;opacity:0;translate:0 6px;transition:opacity .3s ease,translate .3s ease}
+.g:hover span,.g:focus-visible span{opacity:1;translate:0 0}
+.g1{grid-column:span 2;grid-row:span 2}.g2{grid-column:span 2;grid-row:span 2}.g3{grid-column:span 2}.g4{grid-column:span 2}
+.g5,.g6,.g7{grid-column:span 2;grid-row:span 2}.g8{grid-column:span 3}.g9{grid-column:span 3}
+@media (max-width:760px){
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .g1,.g2,.g5,.g6{grid-column:span 1;grid-row:span 2}.g3,.g4{grid-column:span 1}.g7,.g8,.g9{grid-column:span 2}.g7{grid-row:span 2}.g7 img{object-position:50% 25%}
+  .g span{opacity:1;translate:0 0}
+}
+.insta-row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center;margin-top:24px;color:var(--muted)}
+.insta-row a{font:600 15px/1 var(--f-body);text-decoration:none;color:var(--gold);border-bottom:2px solid var(--gold);padding-bottom:4px}
+.lightbox{position:fixed;inset:0;z-index:80;background:rgba(6,7,10,.94);display:grid;place-items:center;padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));opacity:0;pointer-events:none;transition:opacity .3s ease}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox figure{margin:0;display:grid;justify-items:center;gap:12px}
+.lightbox img{max-width:min(1100px,100%);max-height:82vh;object-fit:contain;border-radius:10px;scale:.96;transition:scale .35s cubic-bezier(.2,.8,.2,1)}
+.lightbox.open img{scale:1}
+.lightbox p{font:700 13px/1.3 var(--f-display);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);text-align:center}
+.lightbox button{position:absolute;top:max(16px,env(safe-area-inset-top,0px));right:max(16px,env(safe-area-inset-right,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--ink);color:var(--feather);font:400 22px/1 var(--f-body);cursor:pointer}
+
+/* Primeira aula */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px)}
+.step{min-width:0;border-top:2px solid var(--gold);padding-top:22px;display:grid;gap:12px}
+.step .n{font:900 72px/.8 var(--f-display);color:var(--gold)}
+.step h3{font-size:30px}
+.step p{color:var(--muted)}
+.first-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:clamp(36px,5vw,56px)}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+
+/* Onde treinar */
+.info{background:var(--night)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,40px);align-items:stretch}
+.info-grid > *{min-width:0}
+.place{border-radius:22px;border:1px solid var(--line);padding:clamp(24px,3vw,34px);display:grid;gap:18px;align-content:start;background:linear-gradient(180deg,var(--navy),var(--ink))}
+.place .addr{font:800 clamp(34px,4.4vw,54px)/.95 var(--f-display);text-transform:uppercase}
+.place .addr small{display:block;margin-top:12px;font:500 16px/1.5 var(--f-body);text-transform:none;color:var(--muted)}
+.facts{margin:0;display:grid;border-top:1px solid var(--line-2)}
+.facts div{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:13px 0;border-bottom:1px solid var(--line-2);font-size:15.5px}
+.facts dt{font:700 12px/1.8 var(--f-display);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:0}
+.place .ctas{display:flex;flex-wrap:wrap;gap:12px}
+.sched{border:1px dashed var(--line);border-radius:22px;padding:clamp(24px,3vw,34px);display:grid;gap:14px;align-content:start;background:rgba(31,37,56,.35)}
+.sched h3{font-size:40px}
+.sched p{color:var(--muted);max-width:30em}
+.week{display:grid;border-top:1px solid var(--line)}
+.day{display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line-2);font-variant-numeric:tabular-nums}
+.day h4{margin:0;font:800 16px/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.slots{display:flex;flex-wrap:wrap;gap:8px}
+.slot{display:inline-flex;align-items:baseline;gap:10px;padding:8px 14px;border-radius:999px;background:var(--navy);border:1px solid var(--line)}
+.slot b{font:800 20px/1 var(--f-display);color:var(--gold-hi)}
+.slot span{font-size:14px}
+@media (max-width:860px){.info-grid{grid-template-columns:1fr}.facts div{grid-template-columns:96px 1fr}}
+
+/* FAQ */
+.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px)}
+.faq-grid > *{min-width:0}
+.faq-grid h2{font-size:clamp(44px,6vw,80px);margin-top:18px}
+details{border-bottom:1px solid var(--line-2)}
+details:first-child{border-top:1px solid var(--line-2)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;padding:22px 0;font:600 18px/1.35 var(--f-body)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(var(--gold),var(--gold)) center/14px 2px no-repeat,linear-gradient(var(--gold),var(--gold)) center/2px 14px no-repeat;transition:transform .25s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details p{padding:0 0 22px;color:var(--muted);max-width:40em}
+@media (max-width:860px){.faq-grid{grid-template-columns:1fr}}
+
+/* CTA final */
+.final{position:relative;overflow:hidden;isolation:isolate;border-top:1px solid var(--line-2);background:var(--ink)}
+.final::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,var(--ink) 30%,rgba(10,11,16,.65) 65%,rgba(10,11,16,.8)),url("assets/equipe-bandeira.webp") 70% 40%/cover no-repeat;opacity:.6}
+.final h2{font-size:clamp(58px,11vw,156px);font-weight:900;margin-top:18px;line-height:.86}
+.final p{margin-top:22px;max-width:32em;color:#d6d6de;font-size:18px}
+.final .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+
+footer{border-top:1px solid var(--line-2);padding-block:28px 120px;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center}
+footer .f-brand{display:flex;align-items:center;gap:10px}
+footer a{color:var(--muted)}
+footer a:hover{color:var(--gold)}
+
+/* A águia que acompanha o site: rosto da logo, corpo de dobok */
+.buddy{--x:0px;position:fixed;z-index:45;right:max(14px,calc(env(safe-area-inset-right,0px) + 14px));bottom:max(10px,calc(env(safe-area-inset-bottom,0px) + 10px));width:112px;height:168px;transform:translateX(var(--x));transition:transform 1.3s cubic-bezier(.65,0,.35,1),opacity .4s ease;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.buddy.away{opacity:0;pointer-events:none}
+.buddy .mover{position:absolute;inset:0;transition:translate .5s ease}
+.buddy.away .mover{translate:0 60px}
+.buddy.hop .mover{animation:arc 1.3s cubic-bezier(.4,0,.2,1)}
+@keyframes arc{0%{translate:0 0}45%{translate:0 -150px}100%{translate:0 0}}
+.buddy svg.bird{position:absolute;inset:0;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 14px 18px rgba(0,0,0,.55))}
+.bird .tiltg{transform-box:view-box;transform-origin:200px 560px;transition:transform .45s cubic-bezier(.3,1.3,.5,1)}
+.bird .head{transform-box:view-box;transform-origin:200px 300px;transition:transform .4s cubic-bezier(.3,1.4,.5,1)}
+.bird .wing{transform-box:view-box;transition:transform .35s cubic-bezier(.3,1.3,.5,1)}
+.bird .wing-l{transform-origin:96px 318px}.bird .wing-r{transform-origin:304px 318px}
+.bird .leg{transform-box:view-box;transition:transform .3s cubic-bezier(.3,1.4,.5,1)}
+.bird .leg-l{transform-origin:150px 520px}.bird .leg-r{transform-origin:250px 520px}
+.bird .lid{transform-box:fill-box;transform-origin:50% 0;transform:scaleY(0);transition:transform .07s ease}
+.bird.blink .lid{transform:scaleY(1)}
+.bird .glow{opacity:0;transition:opacity .3s ease;mix-blend-mode:screen}
+.buddy:hover .glow,.buddy.talk .glow{opacity:1}
+.buddy:hover .wing-l,.buddy.talk .wing-l{transform:rotate(115deg)}
+.buddy.talk .head{transform:rotate(-5deg)}
+.buddy.flying .wing-l{animation:flapL .24s ease-in-out infinite alternate}
+.buddy.flying .wing-r{animation:flapR .24s ease-in-out infinite alternate}
+.buddy.flying .leg-l{transform:rotate(18deg) translateY(-14px)}
+.buddy.flying .leg-r{transform:rotate(-18deg) translateY(-14px)}
+@keyframes flapL{from{transform:rotate(70deg)}to{transform:rotate(150deg)}}
+@keyframes flapR{from{transform:rotate(-70deg)}to{transform:rotate(-150deg)}}
+.buddy.kick .leg-r{transform:rotate(-95deg)}
+
+.buddy.kick .wing-r{transform:rotate(-40deg)}
+@media (prefers-reduced-motion:no-preference){
+  .bird .body{animation:breathe 3.4s ease-in-out infinite}
+  .bird .head{animation:bob 3.4s ease-in-out infinite}
+  @keyframes breathe{50%{transform:translateY(3px)}}
+  @keyframes bob{50%{translate:0 4px}}
+}
+.say{position:absolute;bottom:calc(100% - 6px);right:30%;width:max-content;max-width:230px;background:var(--feather);color:var(--ink);font:600 14px/1.3 var(--f-body);padding:11px 14px;border-radius:14px 14px 4px 14px;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:opacity .25s ease,scale .25s ease;transform-origin:100% 100%}
+.say b{display:block;font:800 17px/1 var(--f-display);text-transform:uppercase;margin-bottom:3px}
+.say.hide{opacity:0;scale:.85;pointer-events:none}
+.buddy.left svg.bird{transform:scaleX(-1)}
+.buddy.left .say{right:auto;left:30%;border-radius:14px 14px 14px 4px;transform-origin:0 100%}
+@media (max-width:560px){.buddy{width:76px;height:114px;right:max(8px,calc(env(safe-area-inset-right,0px) + 8px))}.say{max-width:min(210px,calc(100vw - 110px));font-size:13px;right:70%}}
+
+/* Ajustes de celular */
+@media (max-width:560px){
+  .btn{width:100%;padding:0 18px;font-size:14px;letter-spacing:.03em;white-space:nowrap}
+  .nav .btn{width:auto}
+  .hero .ctas,.final .ctas,.first-cta,.place .ctas{flex-direction:column}
+  .stage{margin-bottom:22px}
+  .hint{bottom:-26px}
+  .sec-head{margin-bottom:32px}
+  footer .f-brand{align-items:center}
+}
+
+/* Movimento de entrada (o estado em repouso é visível) */
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+  .d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+  @keyframes rise{from{opacity:0;translate:0 24px}}
+  .hero h1 .ln > span{animation:lineup 1s cubic-bezier(.2,.8,.2,1) both}
+  .hero h1 .ln:nth-child(2) > span{animation-delay:.12s}
+  .hero h1 .ln:nth-child(3) > span{animation-delay:.24s}
+  @keyframes lineup{from{translate:0 105%}}
+  .pre{opacity:0;translate:0 28px}
+  .in{opacity:1;translate:0 0;transition:opacity .8s ease,translate .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--dl,0s)}
+  .belt-bar.pre{opacity:1;translate:0 0;transform:scaleX(0)}
+  .belt-bar.in{transform:scaleX(1);transition:transform 1.1s cubic-bezier(.2,.8,.2,1);transition-delay:var(--dl,0s)}
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.150l-.3-.18-3.12.82.83-3.04-.2-.31a8.23 8.23 0 1 1 6.98 3.86Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.34-.76-1.840-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M7 2.9h10A4.1 4.1 0 0 1 21.1 7v10a4.1 4.1 0 0 1-4.1 4.1H7A4.1 4.1 0 0 1 2.9 17V7A4.1 4.1 0 0 1 7 2.9Z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4v16l13-8Z"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M6 4h4v16H6zM14 4h4v16h-4z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <span class="nav-progress" id="navProgress" aria-hidden="true"></span>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Elite Hapkido, início">
+      <img src="assets/logo-512.webp" alt="" width="42" height="42">
+      <b>Elite <span>Hapkido</span></b>
+    </a>
+    <nav class="nav-links" aria-label="Seções">
+      <a href="#caminho">O hapkido</a>
+      <a href="#professor">Professor</a>
+      <a href="#titulos">Títulos</a>
+      <a href="#acao">Em ação</a>
+      <a href="#equipe">Equipe</a>
+      <a href="#local">Onde treinar</a>
+    </nav>
+    <a class="btn btn-main js-cta" href="#" target="_blank" rel="noopener" data-msg="hero"><svg><use href="#i-wa"/></svg><span>Aula experimental</span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" data-say="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow rise"><span>Hapkido · Defesa pessoal · BH</span><span class="kr">합기도</span></p>
+        <h1><span class="ln"><span>Controle</span></span><span class="ln"><span>a força.</span></span><span class="ln"><span class="gold">Voe alto.</span></span></h1>
+        <p class="lede rise d2">Hapkido é a arte coreana que usa a força do oponente contra ele, com <b>chaves articulares, projeções e chutes</b>. Na Elite, quem ensina é o professor <b>Yuri Vargas</b>, faixa preta 1º Dan e campeão brasileiro de hapkido.</p>
+        <div class="ctas rise d3">
+          <a class="btn btn-main js-cta" href="#" target="_blank" rel="noopener" data-msg="trial"><svg><use href="#i-wa"/></svg>Marcar aula experimental</a>
+          <a class="btn btn-ghost" href="#acao">Ver treino em ação</a>
+        </div>
+        <div class="chips rise d4">
+          <span class="chip"><i></i>CT Forja · Santa Terezinha</span>
+          <span class="chip"><i></i>Filiada à FMHI</span>
+          <span class="chip"><i></i>Iniciantes bem-vindos</span>
+        </div>
+      </div>
+      <div class="stage rise d2" id="stage">
+        <span class="hangul" aria-hidden="true">합기도</span>
+        <svg class="orbit" viewBox="0 0 500 500" aria-hidden="true">
+          <defs><path id="orbitPath" d="M250,250 m-226,0 a226,226 0 1,1 452,0 a226,226 0 1,1 -452,0"/></defs>
+          <circle class="ring-line" cx="250" cy="250" r="244"/>
+          <g class="spin">
+            <circle class="ticks" cx="250" cy="250" r="208" stroke-dasharray="1.5 10"/>
+            <text><textPath href="#orbitPath">Elite Hapkido · 합기도 · Disciplina · Constância · Evolução · Elite Hapkido · 합기도 · Disciplina · Constância · Evolução ·</textPath></text>
+          </g>
+        </svg>
+        <button class="eagle" id="eagle" type="button" aria-label="Emblema da Elite Hapkido. Toque para ver uma técnica.">
+          <span class="emb" data-emb><img src="assets/logo.webp" alt="Logo da Elite Hapkido: águia de olhar firme dentro de um círculo preto e dourado" width="940" height="940"></span>
+        </button>
+        <span class="shock" id="shock" aria-hidden="true"></span>
+        <div class="card" id="card" aria-live="polite">
+          <span class="tag"><span id="cTag">Técnica</span><span id="cNum"></span></span>
+          <span class="kr" id="cKr">합기도</span>
+          <b id="cTitle">Hapkido</b>
+          <span class="txt" id="cText">Toque na águia e conheça os golpes do hapkido.</span>
+        </div>
+        <span class="hint" id="hint">Toque na águia</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span><em>관절기</em> Chaves articulares</span><span><em>던지기</em> Projeções</span><span><em>발차기</em> Chutes</span><span><em>호신술</em> Defesa pessoal</span><span><em>낙법</em> Quedas</span><span><em>단전호흡</em> Respiração</span>
+      <span><em>관절기</em> Chaves articulares</span><span><em>던지기</em> Projeções</span><span><em>발차기</em> Chutes</span><span><em>호신술</em> Defesa pessoal</span><span><em>낙법</em> Quedas</span><span><em>단전호흡</em> Respiração</span>
+    </div>
+  </div>
+
+  <section id="caminho" data-say="caminho">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>O nome já explica</span><span class="kr">합 · 기 · 도</span></p><h2>Três sílabas,<br>uma arte</h2></div>
+        <p>Hapkido não depende de tamanho ou força bruta. Você aprende a ceder, redirecionar e controlar, por isso a arte funciona para homens, mulheres e jovens de qualquer porte.</p>
+      </div>
+      <div class="way-grid">
+        <article class="way reveal"><span class="glyph" aria-hidden="true">합</span><span class="rom">Hap</span><h3>Harmonia</h3><p>Em vez de bater de frente, você se une ao movimento do adversário e muda a direção dele.</p></article>
+        <article class="way reveal"><span class="glyph" aria-hidden="true">기</span><span class="rom">Ki</span><h3>Energia</h3><p>A força nasce da respiração e do centro do corpo. Postura e timing valem mais que músculo.</p></article>
+        <article class="way reveal"><span class="glyph" aria-hidden="true">도</span><span class="rom">Do</span><h3>Caminho</h3><p>Disciplina, respeito e evolução de faixa em faixa, dentro e fora do dojang.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="professor" class="coach" data-say="professor">
+    <div class="wrap coach-grid">
+      <figure class="portrait reveal">
+        <img src="assets/yuri-faixa-preta.webp" alt="Professor Yuri Vargas de dobok preto e faixa preta de hapkido, de braços cruzados" width="825" height="1100" loading="lazy">
+        <figcaption><span>Faixa preta 1º Dan</span><span>Hapkido desde 2011</span></figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow"><span>Quem comanda os treinos</span><span class="kr">사범</span></p>
+        <h2>Yuri <span class="gold">Vargas</span></h2>
+        <p class="role">Fundador e professor da Elite Hapkido · Belo Horizonte</p>
+        <div class="pillars" aria-label="Pilares"><span>Disciplina</span><span>Constância</span><span>Evolução contínua</span></div>
+        <div class="bio">
+          <p>A jornada do Yuri nas artes marciais começou em 2011, no hapkido. Lá se formou faixa preta 1º Dan e, para ter uma formação mais completa, foi buscar o taekwondo, o jiu-jitsu e dois anos de muay thai com o professor Léo Pitbull.</p>
+          <p>Formado em Administração, estruturou a Elite Hapkido em Belo Horizonte. A missão vai além dos golpes: desenvolver autoconfiança, disciplina, condicionamento físico e uma defesa pessoal que funciona no dia a dia.</p>
+        </div>
+        <div class="stats">
+          <div class="stat"><b data-count="15">15</b><span>anos de hapkido</span></div>
+          <div class="stat"><b data-count="7">7</b><span>títulos de campeão</span></div>
+          <div class="stat"><b data-count="4">4</b><span>artes marciais</span></div>
+        </div>
+        <ul class="belts" aria-label="Graduações">
+          <li class="belt-row"><span class="art">Hapkido</span><span class="lvl">Faixa preta 1º Dan</span><span class="belt-bar b-black reveal" aria-hidden="true"></span><small>Formado pelo grão-mestre Douglas Alves Simões (Big Shark Team). Hoje segue com o mestre Douglas Rosendo (Sport Defense) e a FMHI.</small></li>
+          <li class="belt-row"><span class="art">Taekwondo</span><span class="lvl">Faixa marrom 3º Gub</span><span class="belt-bar b-brown reveal" aria-hidden="true"></span><small>Desde 2014, com o professor Christopher Reges, hoje na Forja Taekwondo.</small></li>
+          <li class="belt-row"><span class="art">Jiu-jitsu</span><span class="lvl">Faixa azul</span><span class="belt-bar b-blue reveal" aria-hidden="true"></span><small>Formado pela Ricardo Luiz Team. Hoje treina com o professor Isaak Avelar, da Black Guardian.</small></li>
+        </ul>
+        <a class="ig" href="https://www.instagram.com/proff_vargas/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@proff_vargas</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="titulos" data-say="titulos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>Títulos</span><span class="kr">우승</span></p><h2>Currículo de<br>competição</h2></div>
+        <p>Pódios no hapkido e no taekwondo, em Minas e no Brasil. A mesma experiência de competição chega aos alunos, que já sobem ao pódio no Campeonato Brasileiro.</p>
+      </div>
+      <div class="titles-grid">
+        <ul class="palm">
+          <li class="reveal"><span class="yr">2018</span><span class="md">1</span><div><b>Campeão Brasileiro<span class="art">Hapkido</span></b></div></li>
+          <li class="reveal"><span class="yr">2014 · 16 · 17</span><span class="md">1</span><div><b>Tricampeão Mineiro Absoluto<span class="art">Hapkido</span></b><small>Luta, defesa pessoal, salto em altura e salto em distância</small></div></li>
+          <li class="reveal"><span class="yr">2025</span><span class="md">1</span><div><b>Campeão Mineiro<span class="art">Hapkido</span></b><small>Salto em altura e salto em distância</small></div></li>
+          <li class="reveal"><span class="yr">2016</span><span class="md silver">2</span><div><b>Vice da Copa Minas<span class="art">Hapkido</span></b><small>Patos de Minas</small></div></li>
+          <li class="reveal"><span class="yr">2018</span><span class="md">1</span><div><b>Campeão Mineiro<span class="art">Taekwondo</span></b><small>Até 80 kg</small></div></li>
+          <li class="reveal"><span class="yr">2024</span><span class="md">1</span><div><b>Campeão Mineiro<span class="art">Taekwondo</span></b><small>Até 74 kg</small></div></li>
+          <li class="reveal"><span class="yr">2025</span><span class="md silver">2</span><div><b>Vice-campeão Mineiro<span class="art">Taekwondo</span></b><small>Até 74 kg</small></div></li>
+        </ul>
+        <figure class="podium reveal">
+          <img src="assets/brasileiro-podio.webp" alt="Yuri Vargas no lugar mais alto do pódio do Campeonato Brasileiro de Hapkido" width="825" height="1100" loading="lazy">
+          <figcaption>Campeonato Brasileiro de Hapkido · BH/MG</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="acao" class="action" data-say="acao">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>Em ação</span><span class="kr">수련</span></p><h2>Treino<br>de verdade</h2></div>
+        <p>Chutes, projeções e defesa pessoal gravados nos treinos da Elite. Os vídeos rodam sem som enquanto você rola a página.</p>
+      </div>
+      <div class="reels">
+        <figure class="reel reveal"><video data-src="assets/v-chute-saltado.mp4" poster="assets/v-chute-saltado-poster.webp" muted loop playsinline preload="none" aria-label="Chute saltado no treino"></video><figcaption><span class="kr">뛰어차기</span><b>Chute saltado</b></figcaption></figure>
+        <figure class="reel reveal"><video data-src="assets/v-projecao.mp4" poster="assets/v-projecao-poster.webp" muted loop playsinline preload="none" aria-label="Chave e projeção levando o parceiro ao chão"></video><figcaption><span class="kr">던지기</span><b>Chave e projeção</b></figcaption></figure>
+        <figure class="reel reveal"><video data-src="assets/v-chute-aparador.mp4" poster="assets/v-chute-aparador-poster.webp" muted loop playsinline preload="none" aria-label="Chute no aparador"></video><figcaption><span class="kr">발차기</span><b>Chute no aparador</b></figcaption></figure>
+        <figure class="reel reveal"><video data-src="assets/v-defesa.mp4" poster="assets/v-defesa-poster.webp" muted loop playsinline preload="none" aria-label="Defesa pessoal com queda do agressor"></video><figcaption><span class="kr">호신술</span><b>Defesa pessoal</b></figcaption></figure>
+        <figure class="reel wide reveal"><video data-src="assets/v-kids.mp4" poster="assets/v-kids-poster.webp" muted loop playsinline preload="none" aria-label="Aluno jovem acertando chute em um parceiro bem maior"></video><figcaption><span class="kr">합기도</span><b>Tamanho não é documento</b></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="tecnicas" data-say="tecnicas">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>No tatame</span><span class="kr">기술</span></p><h2>O que você<br>vai treinar</h2></div>
+        <p>Cada aula mistura fundamentos, técnica em dupla e aplicação. Você treina tanto o ataque quanto a defesa, sempre com controle e segurança.</p>
+      </div>
+      <div class="tech-grid">
+        <article class="tech reveal">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 30c6-2 10-6 13-12M21 18l9 4M30 22c3 5 6 8 10 9"/><circle cx="21" cy="18" r="3"/><path d="M34 12a12 12 0 0 1 4 9" stroke-dasharray="2 4"/><path d="m36 10 2 2.5-3 .5"/></svg>
+          <span class="kr">관절기</span><span class="rom">Gwanjeol-gi</span>
+          <h3>Chaves articulares</h3>
+          <p>Torções de punho, cotovelo e ombro que imobilizam sem precisar de força.</p>
+        </article>
+        <article class="tech reveal">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 34a16 16 0 0 1 28-14"/><path d="m38 12 0 8-8 0"/><path d="M6 40h36"/></svg>
+          <span class="kr">던지기</span><span class="rom">Deonjigi</span>
+          <h3>Projeções</h3>
+          <p>Desequilíbrio e alavanca para levar o oponente ao chão usando o próprio movimento dele.</p>
+        </article>
+        <article class="tech reveal">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="10" r="4"/><path d="M14 14v12l-6 14M14 26l24-8"/><path d="M40 12l4 4M40 20h5M38 26l3 3"/></svg>
+          <span class="kr">발차기</span><span class="rom">Bal chagi</span>
+          <h3>Chutes</h3>
+          <p>Chutes baixos, giratórios e saltados, com a base técnica que vem do taekwondo.</p>
+        </article>
+        <article class="tech reveal">
+          <svg class="ic" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 5 9 11v11c0 10 6.5 17 15 21 8.5-4 15-11 15-21V11Z"/><path d="m17 24 5 5 9-10"/></svg>
+          <span class="kr">호신술</span><span class="rom">Hosinsul</span>
+          <h3>Defesa pessoal</h3>
+          <p>Saídas de agarre, defesa contra socos e situações reais do dia a dia, treinadas com calma.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="who" data-say="who">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>Para quem é</span></p><h2>Seu ponto<br>de partida</h2></div>
+        <p>Não precisa de experiência nem de preparo físico. O professor adapta o treino ao seu nível desde a primeira aula.</p>
+      </div>
+      <div class="who-grid">
+        <article class="who-card main reveal"><span class="n">Iniciantes</span><h3>Nunca treinou</h3><p>Comece pelas quedas, pela postura e pelas primeiras chaves. Em poucas aulas você já entende como se defender.</p></article>
+        <article class="who-card reveal"><span class="n">Jovens e adultos</span><h3>Confiança</h3><p>Disciplina, condicionamento e autoconfiança. A turma tem adolescentes e adultos treinando lado a lado.</p></article>
+        <article class="who-card reveal"><span class="n">Competição</span><h3>Pódio</h3><p>Quer competir? Os alunos da Elite já disputam o Campeonato Brasileiro e os torneios mineiros de hapkido.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="federacao" class="fed" data-say="fed">
+    <div class="wrap fed-grid">
+      <div>
+        <p class="eyebrow"><span>Federação</span><span class="kr">연맹</span></p>
+        <h2>Filiada à<br>FMHI</h2>
+        <p class="lead">A Elite Hapkido faz parte da Federação Mineira de Hapkido Interestilos. O treino segue um currículo reconhecido, com graduação por faixas, campeonatos e encontros com outras academias de Minas.</p>
+        <ul>
+          <li><b>01</b><span>Graduação por faixas, da branca à preta</span></li>
+          <li><b>02</b><span>Exames e certificados com a federação</span></li>
+          <li><b>03</b><span>Campeonatos mineiros e brasileiros</span></li>
+          <li><b>04</b><span>Seminários e encontros com outras equipes</span></li>
+        </ul>
+        <a class="btn btn-dark" href="https://www.instagram.com/fmhi_hkd/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@fmhi_hkd</a>
+      </div>
+      <figure class="fed-photo reveal">
+        <img src="assets/podio-aluno.webp" alt="Aluno da Elite no pódio do Campeonato Brasileiro de Hapkido ao lado do professor Yuri" width="834" height="1000" loading="lazy">
+        <figcaption>Aluno da Elite no Campeonato Brasileiro de Hapkido</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="equipe" data-say="equipe">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>A equipe</span><span class="kr">가족</span></p><h2>Família<br>Elite</h2></div>
+        <p>Graduações, campeonatos e treino de rotina. Toque em uma foto para ampliar.</p>
+      </div>
+      <div class="gallery" id="gallery">
+        <button class="g g1 reveal" type="button"><img src="assets/kukkiwon-chute.webp" alt="" loading="lazy"><span>Chute no Kukkiwon</span></button>
+        <button class="g g2 reveal" type="button"><img src="assets/equipe-bandeira.webp" alt="" loading="lazy"><span>Equipe com a bandeira da Elite</span></button>
+        <button class="g g3 reveal" type="button"><img src="assets/graduacao.webp" alt="" loading="lazy"><span>Dia de graduação</span></button>
+        <button class="g g4 reveal" type="button"><img src="assets/evento-equipe.webp" alt="" loading="lazy"><span>Equipe no Campeonato Brasileiro</span></button>
+        <button class="g g5 reveal" type="button"><img src="assets/chute-saltado.webp" alt="" loading="lazy"><span>Chute saltado no aparador</span></button>
+        <button class="g g6 reveal" type="button"><img src="assets/kukkiwon-bandeira.webp" alt="" loading="lazy"><span>Bandeira da Elite no Kukkiwon</span></button>
+        <button class="g g7 reveal" type="button"><img src="assets/certificados.webp" alt="" loading="lazy"><span>Entrega de certificados</span></button>
+        <button class="g g8 reveal" type="button"><img src="assets/turma-grande.webp" alt="" loading="lazy" style="object-position:50% 60%"><span>Treino com a turma cheia</span></button>
+        <button class="g g9 reveal" type="button"><img src="assets/liga-mineira.webp" alt="" loading="lazy" style="object-position:50% 45%"><span>Liga Mineira de Hapkido</span></button>
+      </div>
+      <div class="insta-row">
+        <span>Acompanhe o dia a dia da equipe</span>
+        <a class="js-ig" href="https://www.instagram.com/elite_hkd/" target="_blank" rel="noopener">@elite_hkd no Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="primeira" class="info" data-say="primeira">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>Primeira aula</span></p><h2>Do primeiro<br>contato ao tatame</h2></div>
+        <p>A aula experimental serve para você conhecer a turma, o professor e o ritmo do treino, sem compromisso.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal"><span class="n">1</span><h3>Mande uma mensagem</h3><p>Chame o professor Yuri, diga se já treinou alguma arte e escolha o melhor dia.</p></div>
+        <div class="step reveal"><span class="n">2</span><h3>Venha confortável</h3><p>Não precisa de dobok na primeira aula. Use roupa de treino e traga uma garrafa de água.</p></div>
+        <div class="step reveal"><span class="n">3</span><h3>Treine com a equipe</h3><p>Aquecimento, quedas e técnica em dupla. Você sai da aula sabendo sua primeira chave.</p></div>
+      </div>
+      <div class="first-cta">
+        <a class="btn btn-main js-cta" href="#" target="_blank" rel="noopener" data-msg="trial"><svg><use href="#i-wa"/></svg>Quero minha aula experimental</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="local" data-say="local">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><p class="eyebrow"><span>Onde treinar</span></p><h2>CT Forja,<br>Santa Terezinha</h2></div>
+        <p>As aulas de hapkido e defesa pessoal acontecem no CT Forja, no bairro Santa Terezinha, em Belo Horizonte.</p>
+      </div>
+      <div class="info-grid">
+        <div class="place reveal">
+          <p class="addr">CT Forja<small id="addr">R. Julita Nogueira Soares, 816<br>Santa Terezinha, Belo Horizonte, MG · CEP 31360-040</small></p>
+          <dl class="facts">
+            <div><dt>Aulas</dt><dd>Hapkido e defesa pessoal</dd></div>
+            <div><dt>Professor</dt><dd>Yuri Vargas, faixa preta 1º Dan</dd></div>
+            <div><dt>Federação</dt><dd>FMHI · Federação Mineira de Hapkido Interestilos</dd></div>
+            <div><dt>WhatsApp</dt><dd>+55 (31) 9331-3678</dd></div>
+          </dl>
+          <div class="ctas">
+            <a class="btn btn-ghost" id="mapsBtn" href="#" target="_blank" rel="noopener">Abrir no Google Maps ↗</a>
+          </div>
+        </div>
+        <div id="schedule"></div>
+      </div>
+    </div>
+  </section>
+
+  <section data-say="faq">
+    <div class="wrap faq-grid">
+      <div><p class="eyebrow"><span>Dúvidas</span></p><h2>Antes do<br>primeiro treino</h2></div>
+      <div>
+        <details><summary>Qual a diferença entre hapkido e taekwondo?</summary><p>Os dois são coreanos e têm chutes, mas o hapkido vai além: tem chaves articulares, projeções, quedas e defesa contra agarres. É uma arte voltada à defesa pessoal completa.</p></details>
+        <details><summary>Preciso ter experiência ou preparo físico?</summary><p>Não. O condicionamento vem com o treino, e o professor adapta os exercícios para quem está começando.</p></details>
+        <details><summary>O que significa "interestilos"?</summary><p>Que a federação reúne praticantes de diferentes escolas de hapkido. O currículo aproveita técnicas de várias linhagens da arte.</p></details>
+        <details><summary>Preciso comprar dobok para começar?</summary><p>Não. Na aula experimental, venha com roupa de treino. Depois o professor orienta sobre o dobok e a faixa.</p></details>
+        <details><summary>Hapkido funciona para mulheres?</summary><p>Sim. A arte se baseia em alavanca, timing e redirecionamento de força, então funciona contra pessoas maiores e mais fortes.</p></details>
+        <details><summary>Como marco a aula experimental?</summary><p>Mande uma mensagem pelo botão desta página. O professor Yuri responde com os horários e a melhor turma para você.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final" data-say="final">
+    <div class="wrap">
+      <p class="eyebrow"><span>Elite Hapkido</span><span class="kr">합기도</span></p>
+      <h2>Seu caminho<br>começa <span class="gold">hoje.</span></h2>
+      <p>Mande uma mensagem para o professor Yuri Vargas e marque sua aula experimental no CT Forja.</p>
+      <div class="ctas">
+        <a class="btn btn-main js-cta" href="#" target="_blank" rel="noopener" data-msg="trial"><svg><use href="#i-wa"/></svg>Falar com o professor</a>
+        <a class="btn btn-ghost js-ig" href="https://www.instagram.com/elite_hkd/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>@elite_hkd</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="footer">
+  <div class="wrap">
+    <span class="f-brand"><img src="assets/logo-512.webp" alt="" width="32" height="32"><span>© <span id="yr">2026</span> Elite Hapkido · CT Forja, Santa Terezinha, BH</span></span>
+    <span><a class="js-ig" href="https://www.instagram.com/elite_hkd/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.instagram.com/fmhi_hkd/" target="_blank" rel="noopener">FMHI</a> · <a href="https://www.instagram.com/proff_vargas/" target="_blank" rel="noopener">Prof. Yuri Vargas</a></span>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada"><button type="button" id="lbClose" aria-label="Fechar">×</button><figure><img id="lbImg" alt=""><p id="lbCap"></p></figure></div>
+
+<a class="buddy js-cta away" id="buddy" href="#" target="_blank" rel="noopener" data-msg="trial" aria-label="Marcar aula experimental pelo WhatsApp">
+  <span class="mover">
+    <svg class="bird" id="bird" viewBox="0 0 400 600" aria-hidden="true">
+      <defs>
+        <radialGradient id="eyeGlow"><stop offset="0" stop-color="#fff1c2" stop-opacity=".95"/><stop offset=".4" stop-color="#dcc37a" stop-opacity=".55"/><stop offset="1" stop-color="#dcc37a" stop-opacity="0"/></radialGradient>
+        <path id="wingShape" d="M0 0 C-30 8 -58 48 -66 108 L-58 146 L-72 166 L-52 170 L-58 196 L-36 186 L-34 208 L-16 184 C-6 136 2 78 12 28 Z"/>
+        <path id="talon" d="M-30 0 C-34 14 -38 22 -46 30 M-10 2 C-12 16 -12 24 -16 34 M10 2 C12 16 14 24 18 32 M30 0 C34 12 40 20 48 26"/>
+      </defs>
+      <g class="tiltg">
+        <g class="body">
+          <g class="leg leg-l"><path d="M108 512 L198 512 L188 566 L122 566Z" fill="#121318" stroke="#a8893f" stroke-width="3" stroke-linejoin="round"/><g transform="translate(155 566)"><path d="M-34 -4 H34 V6 H-34Z" fill="#d79a3a"/><use href="#talon" fill="none" stroke="#d79a3a" stroke-width="9" stroke-linecap="round"/></g></g>
+          <g class="leg leg-r"><path d="M202 512 L292 512 L278 566 L212 566Z" fill="#121318" stroke="#a8893f" stroke-width="3" stroke-linejoin="round"/><g transform="translate(245 566)"><path d="M-34 -4 H34 V6 H-34Z" fill="#d79a3a"/><use href="#talon" fill="none" stroke="#d79a3a" stroke-width="9" stroke-linecap="round"/></g></g>
+          <path d="M96 300 C88 360 92 440 102 520 L298 520 C308 440 312 360 304 300 C268 284 132 284 96 300Z" fill="#121318" stroke="#a8893f" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M160 296 L200 410 L240 296Z" fill="#efece2"/>
+          <path d="M176 318 l10 14 l10 -14 M206 318 l10 14 l10 -14 M190 350 l10 14 l10 -14" fill="none" stroke="#cfcac0" stroke-width="3" stroke-linecap="round"/>
+          <path d="M146 296 L200 420 L214 404 L168 294Z" fill="#121318" stroke="#dcc37a" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M254 296 L200 420 L186 404 L232 294Z" fill="#121318" stroke="#dcc37a" stroke-width="3" stroke-linejoin="round"/>
+          <image href="assets/logo-512.webp" x="246" y="336" width="36" height="36"/>
+          <rect x="94" y="452" width="212" height="26" rx="4" fill="#0a0b10" stroke="#dcc37a" stroke-width="2.5"/>
+          <path d="M188 462 L176 540 L194 540 L202 474 L212 540 L230 540 L214 462Z" fill="#0a0b10" stroke="#dcc37a" stroke-width="2.5" stroke-linejoin="round"/>
+          <rect x="183" y="520" width="9" height="16" fill="#dcc37a"/>
+          <rect x="186" y="448" width="28" height="34" rx="6" fill="#0a0b10" stroke="#dcc37a" stroke-width="2.5"/>
+          <g class="wing wing-l"><g transform="translate(96 318)"><use href="#wingShape" fill="#1f2538" stroke="#dcc37a" stroke-width="3" stroke-linejoin="round"/><path d="M-6 30 C-24 70 -40 110 -50 150 M4 40 C-8 90 -18 130 -26 176" fill="none" stroke="#dcc37a" stroke-width="2" opacity=".5"/></g></g>
+          <g class="wing wing-r"><g transform="translate(304 318) scale(-1 1)"><use href="#wingShape" fill="#1f2538" stroke="#dcc37a" stroke-width="3" stroke-linejoin="round"/><path d="M-6 30 C-24 70 -40 110 -50 150 M4 40 C-8 90 -18 130 -26 176" fill="none" stroke="#dcc37a" stroke-width="2" opacity=".5"/></g></g>
+        </g>
+        <g class="head">
+          <image href="assets/eagle-head.webp" x="40" y="0" width="320" height="339"/>
+          <g transform="rotate(12 166 101)"><ellipse class="lid" cx="166" cy="101" rx="23" ry="15" fill="#cfcac0"/></g>
+          <g transform="rotate(-10 294 105)"><ellipse class="lid" cx="294" cy="105" rx="23" ry="15" fill="#cfcac0"/></g>
+          <circle class="glow" cx="166" cy="103" r="20" fill="url(#eyeGlow)"/>
+          <circle class="glow" cx="292" cy="107" r="20" fill="url(#eyeGlow)"/>
+        </g>
+      </g>
+    </svg>
+  </span>
+  <span class="say hide" id="say" aria-live="polite"><b id="sayT"></b><span id="sayB"></span></span>
+</a>
+
+<script>
+/* ===== CONFIGURAÇÃO: troque aqui ===== */
+const CONFIG = {
+  // WhatsApp do professor: só números, com 55 + DDD. Ex.: 5531987654321. Vazio = os botões abrem o direct do Instagram.
+  whatsapp: "553193313678",
+  instagram: "https://www.instagram.com/elite_hkd/",
+  instagramDM: "https://ig.me/m/elite_hkd",
+  // Endereço completo para o Google Maps
+  address: "R. Julita Nogueira Soares, 816, Santa Terezinha, Belo Horizonte, MG",
+  // Grade: um item por aula. Ex.: Seg: [["19:00","Hapkido adulto"]]. Vazio = aviso para consultar.
+  schedule: {}
+};
+const MSGS = {
+  hero:  "Olá, professor Yuri! Vi o site da Elite Hapkido e quero agendar uma aula.",
+  trial: "Olá, professor Yuri! Vi o site da Elite Hapkido e quero marcar uma aula experimental de hapkido.",
+  schedule: "Olá, professor Yuri! Queria saber os horários das turmas da Elite Hapkido."
+};
+/* ===================================== */
+const num = CONFIG.whatsapp.replace(/\D/g, "");
+const ctaHref = k => num ? "https://wa.me/" + num + "?text=" + encodeURIComponent(MSGS[k] || MSGS.trial) : CONFIG.instagramDM;
+document.querySelectorAll(".js-cta").forEach(a => {
+  a.href = ctaHref(a.dataset.msg);
+  if (!num) a.querySelectorAll("use").forEach(u => { if (u.getAttribute("href") === "#i-wa") u.setAttribute("href", "#i-ig"); });
+});
+document.querySelectorAll(".js-ig").forEach(a => a.href = CONFIG.instagram);
+document.getElementById("yr").textContent = new Date().getFullYear();
+document.getElementById("mapsBtn").href = "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.address);
+
+const sched = document.getElementById("schedule"), days = Object.entries(CONFIG.schedule).filter(([, s]) => s.length);
+sched.innerHTML = days.length
+  ? `<div class="sched reveal"><h3>Horários</h3><div class="week" role="table" aria-label="Horários semanais">${days.map(([d, s]) =>
+      `<div class="day" role="row"><h4>${d}</h4><div class="slots">${s.map(([h, t]) => `<span class="slot"><b>${h}</b><span>${t}</span></span>`).join("")}</div></div>`).join("")}</div></div>`
+  : `<div class="sched reveal"><h3>Horários</h3><p>As turmas mudam conforme o nível e a época do ano. Mande uma mensagem e o professor indica a melhor turma para você.</p><a class="btn btn-main" href="${ctaHref("schedule")}" target="_blank" rel="noopener"><svg><use href="${num ? "#i-wa" : "#i-ig"}"/></svg>Consultar horários</a></div>`;
+
+/* Pálpebras e brilho nos olhos da águia (hero e companheira) */
+const embs = [...document.querySelectorAll("[data-emb]")];
+embs.forEach(e => e.insertAdjacentHTML("beforeend", '<i class="lid l"></i><i class="lid r"></i><i class="glow l"></i><i class="glow r"></i>'));
+const blink = e => { e.classList.add("blink"); setTimeout(() => e.classList.remove("blink"), 140); };
+embs.forEach(e => (function loop(){ setTimeout(() => { blink(e); if (Math.random() < .3) setTimeout(() => blink(e), 260); loop(); }, 2400 + Math.random()*3400); })());
+
+/* Águia do hero: inclina com o cursor e mostra uma técnica a cada toque */
+(function(){
+  const eagle = document.getElementById("eagle"), stage = document.getElementById("stage"), card = document.getElementById("card"),
+        shock = document.getElementById("shock"), hint = document.getElementById("hint"), emb = eagle.querySelector(".emb");
+  const T = [
+    ["Chave articular","손목꺾기","Sonmok kkeokgi","Torção de punho que leva o oponente ao chão."],
+    ["Chute","돌려차기","Dollyeo chagi","Chute circular, rápido e na altura da cintura."],
+    ["Projeção","허리던지기","Heori deonjigi","Projeção de quadril: entra, carrega e derruba."],
+    ["Defesa pessoal","호신술","Hosinsul","Saída de agarre no punho girando contra o polegar."],
+    ["Queda","낙법","Nakbeop","Aprender a cair primeiro. É o que deixa o treino seguro."],
+    ["Chave articular","팔꺾기","Pal kkeokgi","Chave de cotovelo em pé, controlando o ombro."],
+    ["Chute","옆차기","Yeop chagi","Chute lateral com a borda do pé. Mantém a distância."],
+    ["Princípio","원","Won","O círculo: nunca bater de frente, sempre redirecionar."],
+    ["Chute","뛰어차기","Ttwieo chagi","Chute saltado. Impulso, giro e precisão no alvo."],
+    ["Projeção","다리걸기","Dari geolgi","Rasteira que tira a base quando o oponente avança."],
+    ["Princípio","유","Yu","Fluir como água: ceder para depois controlar."],
+    ["Defesa pessoal","멱살잡기 방어","Defesa de gola","Agarraram sua camisa? Chave no punho e saída lateral."],
+    ["Respiração","단전호흡","Danjeon hohup","Respirar pelo abdômen para gerar força no centro."],
+    ["Graduação","검은띠","Geomeun tti","A faixa preta é o começo de um novo caminho."],
+    ["Elite","합기도","Hapkido","Disciplina, constância e evolução. Bora treinar?"]
+  ];
+  let i = -1, hideT;
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches && matchMedia("(pointer: fine)").matches) {
+    addEventListener("pointermove", e => {
+      const r = stage.getBoundingClientRect();
+      const x = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width/2)) / (innerWidth/2)));
+      const y = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height/2)) / (innerHeight/2)));
+      eagle.style.transform = `rotateY(${x*12}deg) rotateX(${-y*8}deg)`;
+    }, {passive:true});
+  }
+  setTimeout(() => card.classList.add("hide"), 4200);
+  eagle.addEventListener("click", () => {
+    i = (i + 1) % T.length;
+    const [tag, kr, title, txt] = T[i];
+    document.getElementById("cTag").textContent = tag;
+    document.getElementById("cNum").textContent = (i + 1) + "/" + T.length;
+    document.getElementById("cKr").textContent = kr;
+    document.getElementById("cTitle").textContent = title;
+    document.getElementById("cText").textContent = txt;
+    card.classList.remove("hide"); hint.hidden = true;
+    eagle.classList.remove("strike"); shock.classList.remove("go"); emb.classList.add("fire");
+    void eagle.offsetWidth;
+    eagle.classList.add("strike"); shock.classList.add("go");
+    setTimeout(() => emb.classList.remove("fire"), 700);
+    clearTimeout(hideT); hideT = setTimeout(() => card.classList.add("hide"), 6000);
+  });
+})();
+
+/* A águia companheira: sai do hero, voa pelo site, muda de lado, chuta e comenta cada seção */
+(function(){
+  const buddy = document.getElementById("buddy"), bird = document.getElementById("bird"), say = document.getElementById("say"),
+        sayT = document.getElementById("sayT"), sayB = document.getElementById("sayB"), tilt = bird.querySelector(".tiltg");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const LINES = {
+    caminho:   ["합기도", "Harmonia, energia e caminho. Esse é o hapkido.", "r"],
+    professor: ["Esse é o Yuri!", "Faixa preta 1º Dan, no hapkido desde 2011.", "l"],
+    titulos:   ["Campeão brasileiro", "Em 2018. E os alunos já estão no pódio também.", "r"],
+    acao:      ["Olha esse chute!", "É assim que a gente treina na Elite.", "r", "kick"],
+    tecnicas:  ["Chave de punho", "É a minha favorita. Qual vai ser a sua?", "r"],
+    who:       ["Nunca treinou?", "Toda águia já foi filhote. Começa por aqui.", "r"],
+    fed:       ["Filiados à FMHI", "Graduação, exames e campeonatos oficiais.", "l"],
+    equipe:    ["Família Elite", "Toque nas fotos para ver de perto.", "r"],
+    primeira:  ["Bora marcar?", "Me toque e chame o professor no WhatsApp.", "r", "kick"],
+    local:     ["CT Forja", "Santa Terezinha, BH. Te espero no tatame!", "r"],
+    faq:       ["Ficou dúvida?", "Me toque e pergunte direto pro professor.", "r"]
+  };
+  let side = "r", current = "", sayTimer, flyTimer, lastY = scrollY, lastT = performance.now();
+  const wide = () => innerWidth >= 900, roomy = () => innerWidth >= 1440;
+  (function loop(){ setTimeout(() => { bird.classList.add("blink"); setTimeout(() => bird.classList.remove("blink"), 140); loop(); }, 2200 + Math.random()*3200); })();
+  const fly = ms => { if (reduce) return; buddy.classList.add("flying"); clearTimeout(flyTimer); flyTimer = setTimeout(() => { buddy.classList.remove("flying", "hop"); tilt.style.transform = ""; }, ms); };
+  const place = s => {
+    const want = roomy() ? s : "r";
+    if (want === side) { if (!reduce && s === "l") { buddy.classList.remove("hop"); void buddy.offsetWidth; buddy.classList.add("hop"); fly(1300); return true; } return false; }
+    side = want;
+    buddy.classList.toggle("left", side === "l");
+    if (!reduce) { buddy.classList.remove("hop"); void buddy.offsetWidth; buddy.classList.add("hop"); fly(1300); }
+    buddy.style.setProperty("--x", side === "l" ? -(innerWidth - buddy.offsetWidth - 28) + "px" : "0px");
+    return true;
+  };
+  const talk = key => {
+    const L = LINES[key]; if (!L) return;
+    sayT.textContent = L[0]; sayB.textContent = L[1];
+    say.classList.remove("hide"); buddy.classList.add("talk");
+    if (L[3] === "kick" && !reduce) { buddy.classList.add("kick"); setTimeout(() => buddy.classList.remove("kick"), 650); }
+    clearTimeout(sayTimer);
+    sayTimer = setTimeout(() => { say.classList.add("hide"); buddy.classList.remove("talk"); }, wide() ? 6000 : 3600);
+  };
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const k = e.target.dataset.say, hidden = k === "hero" || k === "final";
+    buddy.classList.toggle("away", hidden);
+    if (hidden) { current = k; say.classList.add("hide"); buddy.classList.remove("talk"); return; }
+    if (k === current) return;
+    current = k;
+    const moved = place(LINES[k] ? LINES[k][2] : "r");
+    setTimeout(() => talk(k), moved ? 1300 : 150);
+  }), {rootMargin:"-45% 0px -45% 0px"});
+  document.querySelectorAll("[data-say]").forEach(s => io.observe(s));
+  // bate as asas e inclina enquanto a página rola
+  addEventListener("scroll", () => {
+    if (reduce || buddy.classList.contains("away")) return;
+    const now = performance.now(), v = (scrollY - lastY) / Math.max(16, now - lastT);
+    lastY = scrollY; lastT = now;
+    tilt.style.transform = `rotate(${Math.max(-12, Math.min(12, v * 8))}deg)`;
+    fly(260);
+  }, {passive:true});
+  // inclina a cabeça na direção do botão quando o cursor passa por ele
+  const head = bird.querySelector(".head");
+  document.querySelectorAll(".btn").forEach(b => b.addEventListener("pointerenter", () => {
+    if (buddy.classList.contains("away")) return;
+    const r = b.getBoundingClientRect(), me = buddy.getBoundingClientRect();
+    head.style.transform = `rotate(${r.left + r.width/2 < me.left ? -9 : 9}deg)`;
+    setTimeout(() => head.style.transform = "", 800);
+  }));
+  addEventListener("resize", () => { if (!roomy() && side === "l") { side = "r"; buddy.classList.remove("left"); buddy.style.setProperty("--x", "0px"); } });
+})();
+
+/* Vídeos: tocam só quando aparecem na tela */
+(function(){
+  const vids = [...document.querySelectorAll(".reel video")];
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  vids.forEach(v => {
+    const btn = document.createElement("button");
+    btn.className = "play"; btn.type = "button"; btn.setAttribute("aria-label", "Pausar ou tocar vídeo");
+    btn.innerHTML = '<svg><use href="#i-play"/></svg>';
+    v.parentElement.append(btn);
+    const sync = () => btn.querySelector("use").setAttribute("href", v.paused ? "#i-play" : "#i-pause");
+    v.addEventListener("play", sync); v.addEventListener("pause", sync);
+    btn.addEventListener("click", () => { if (!v.src) v.src = v.dataset.src; v.dataset.user = "1"; v.paused ? v.play().catch(()=>{}) : v.pause(); });
+  });
+  if (reduce || !("IntersectionObserver" in window)) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    const v = e.target;
+    if (e.isIntersecting) { if (!v.src) v.src = v.dataset.src; if (v.dataset.user !== "1") v.play().catch(()=>{}); }
+    else v.pause();
+  }), {threshold:.35});
+  vids.forEach(v => io.observe(v));
+})();
+
+/* Galeria com ampliação */
+(function(){
+  const lb = document.getElementById("lightbox"), img = document.getElementById("lbImg"), cap = document.getElementById("lbCap");
+  let last;
+  document.querySelectorAll("#gallery .g").forEach(g => g.addEventListener("click", () => {
+    last = g; img.src = g.querySelector("img").src; const t = g.querySelector("span").textContent;
+    img.alt = t; cap.textContent = t; lb.classList.add("open"); document.getElementById("lbClose").focus();
+  }));
+  const close = () => { lb.classList.remove("open"); last?.focus(); };
+  lb.addEventListener("click", e => { if (e.target !== img) close(); });
+  addEventListener("keydown", e => { if (e.key === "Escape" && lb.classList.contains("open")) close(); });
+})();
+
+/* Topo encolhe e barra de progresso */
+(function(){
+  const nav = document.getElementById("nav"), bar = document.getElementById("navProgress");
+  const tick = () => {
+    const h = document.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+    nav.classList.toggle("small", scrollY > 40);
+  };
+  addEventListener("scroll", tick, {passive:true}); tick();
+})();
+
+/* Entrada no scroll: só esconde o que ainda está fora da tela; números contam */
+(function(){
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
+  const els = [...document.querySelectorAll(".reveal")];
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("in"); e.target.classList.remove("pre"); io.unobserve(e.target); }
+  }), {rootMargin:"0px 0px -8% 0px"});
+  const groups = new Map();
+  els.forEach(el => {
+    if (el.getBoundingClientRect().top < innerHeight) return;
+    const k = el.parentElement, n = groups.get(k) || 0; groups.set(k, n + 1);
+    el.style.setProperty("--dl", Math.min(n, 6) * .09 + "s");
+    el.classList.add("pre"); io.observe(el);
+  });
+  const nums = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target, end = +el.dataset.count, t0 = performance.now();
+    const step = t => { const p = Math.min(1, (t - t0) / 1100); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step); nums.unobserve(el);
+  }), {threshold:.6});
+  document.querySelectorAll("[data-count]").forEach(n => { if (n.getBoundingClientRect().top > innerHeight) { n.textContent = "0"; nums.observe(n); } });
+})();
+</script>
